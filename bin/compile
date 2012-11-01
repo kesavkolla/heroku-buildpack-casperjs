@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+mkdir -p $BUILD_DIR/.profile.d
+echo "export PATH=\"\$HOME/vendor/phantomjs/bin:\$HOME/vendor/casperjs/bin:\$PATH\"" >> $BUILD_DIR/.profile.d/nodejs.sh
+echo "export LD_LIBRARY_PATH=\"\$HOME/vendor/phantomjs/bin:\$HOME/vendor/casperjs/bin:\$LD_LIBRARY_PAT\"" >> $BUILD_DIR/.profile.d/nodejs.sh

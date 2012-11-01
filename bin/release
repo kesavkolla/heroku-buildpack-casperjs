@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+
+cat <<EOF
+---
+config_vars:
+  PATH: bin:node_modules/.bin:vendor/phantomjs/bin:vendor/casperjs/bin:/usr/local/bin:/usr/bin:/bin
+  LD_LIBRARY_PATH:vendor/phantomjs/lib:vendor/phantomjs/bin:vendor/casperjs/bin
+EOF
