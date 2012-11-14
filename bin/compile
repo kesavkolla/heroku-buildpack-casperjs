@@ -26,10 +26,10 @@ if ! [ -e $CACHE_DIR/$FILE_NAME ]; then
 fi
 
 echo "-----> Extracting PhantomJS binaries" 
-if [ ! -d "$BUILD_DIR/vendor/phantomjs" ]; then
+if ! [ -d "$BUILD_DIR/vendor/phantomjs" ]; then
 	mkdir -p $BUILD_DIR/vendor/phantomjs
 fi
-tar zxf $CACHE_DIR/$FILE_NAME -C $BUILD_DIR/vendor/phantomjs
+tar zvxf $CACHE_DIR/$FILE_NAME -C $BUILD_DIR/vendor/phantomjs
 
 
 echo "-----> Cloning casperjs"
