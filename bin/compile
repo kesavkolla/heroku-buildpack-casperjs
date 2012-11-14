@@ -43,7 +43,7 @@ tar zvxf $CACHE_DIR/$FILE_NAME -C $BUILD_DIR/vendor/phantomjs
 echo "-----> Cloning casperjs"
 
 cd $BUILD_DIR/vendor
-rm -rf casperj
+rm -rf casperjs
 git clone git://github.com/n1k0/casperjs.git
 
 mkdir -p $BUILD_DIR/.profile.d
