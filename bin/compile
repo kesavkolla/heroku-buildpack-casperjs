@@ -25,19 +25,10 @@ if ! [ -e $CACHE_DIR/$FILE_NAME ]; then
   curl $BUILDPACK_PHANTOMJS_PACKAGE -s -o $CACHE_DIR/$FILE_NAME
 fi
 
-echo "Contents of $CACHE_DIR"
-
-ls -l $CACHE_DIR
-
-echo "Contents of $BUILD_DIR"
-ls -lart $BUILD_DIR/vendor
-
 rm -rf $BUILD_DIR/vendor/phantomjs
 echo "-----> Extracting PhantomJS binaries" 
-if ! [ -d "$BUILD_DIR/vendor/phantomjs" ]; then
-	mkdir -p $BUILD_DIR/vendor/phantomjs
-fi
-tar zvxf $CACHE_DIR/$FILE_NAME -C $BUILD_DIR/vendor/phantomjs
+mkdir -p $BUILD_DIR/vendor/phantomjs
+tar zxf $CACHE_DIR/$FILE_NAME -C $BUILD_DIR/vendor/phantomjs
 
 
 echo "-----> Cloning casperjs"
